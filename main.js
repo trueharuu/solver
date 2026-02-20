@@ -1,4 +1,37 @@
 async function main() {
+  // initialize theme based on system preference or saved setting
+  const initTheme = () => {
+    const savedTheme = localStorage.getItem("theme");
+    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = savedTheme || (systemPrefersDark ? "dark" : "light");
+    
+    document.documentElement.setAttribute("data-theme", theme);
+    updateThemeButton(theme);
+  };
+
+  const updateThemeButton = (theme) => {
+    const button = document.getElementById("displaymode");
+    if (button) {
+      button.textContent = theme === "dark" ? "light mode?" : "dark mode?";
+    }
+  };
+
+  const toggleTheme = () => {
+    const current = document.documentElement.getAttribute("data-theme") || "light";
+    const newTheme = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+    updateThemeButton(newTheme);
+  };
+
+  initTheme();
+
+  // add click handler for theme toggle
+  const themeButton = document.getElementById("displaymode");
+  if (themeButton) {
+    themeButton.addEventListener("click", toggleTheme);
+  }
+
   // load saved saves
   const saved_saves = localStorage.getItem("saves");
   if (saved_saves) {

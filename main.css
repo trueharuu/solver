@@ -6,29 +6,50 @@
 }
 
 :root {
-    color-scheme: light dark;
-    --base: light-dark(var(--ctp-latte-base), var(--ctp-mocha-base));
-    --text: light-dark(var(--ctp-latte-text), var(--ctp-mocha-text));
+    --base: var(--ctp-latte-base);
+    --text: var(--ctp-latte-text);
 
-    --blue: light-dark(var(--ctp-latte-red), var(--ctp-mocha-blue));
-    --red: light-dark(var(--ctp-latte-blue), var(--ctp-mocha-red));
+    --blue: var(--ctp-latte-red);
+    --red: var(--ctp-latte-blue);
 
 
-    --overlay0: light-dark(var(--ctp-latte-overlay2), var(--ctp-mocha-overlay0));
-    --overlay2: light-dark(var(--ctp-latte-overlay0), var(--ctp-mocha-overlay2));
+    --overlay0: var(--ctp-latte-overlay2);
+    --overlay2: var(--ctp-latte-overlay0);
 
-    --surface0: light-dark(var(--ctp-latte-surface0), var(--ctp-mocha-surface0));
-    --surface2: light-dark(var(--ctp-latte-surface2), var(--ctp-mocha-surface2));
+    --surface0: var(--ctp-latte-surface0);
+    --surface2: var(--ctp-latte-surface2);
 
-    --T: light-dark(var(--ctp-frappe-mauve), var(--ctp-mocha-mauve));
-    --I: light-dark(var(--ctp-frappe-sky), var(--ctp-mocha-sky));
-    --J: light-dark(var(--ctp-frappe-blue), var(--ctp-mocha-blue));
-    --L: light-dark(var(--ctp-frappe-peach), var(--ctp-mocha-peach));
-    --O: light-dark(var(--ctp-frappe-yellow), var(--ctp-mocha-yellow));
-    --S: light-dark(var(--ctp-frappe-green), var(--ctp-mocha-green));
-    --Z: light-dark(var(--ctp-frappe-red), var(--ctp-mocha-red));
-    --G: light-dark(var(--ctp-frappe-text), var(--ctp-mocha-text));
+    --T: var(--ctp-frappe-mauve);
+    --I: var(--ctp-frappe-sky);
+    --J: var(--ctp-frappe-blue);
+    --L: var(--ctp-frappe-peach);
+    --O: var(--ctp-frappe-yellow);
+    --S: var(--ctp-frappe-green);
+    --Z: var(--ctp-frappe-red);
+    --G: var(--ctp-frappe-text);
+}
 
+:root[data-theme="dark"] {
+    --base: var(--ctp-mocha-base);
+    --text: var(--ctp-mocha-text);
+
+    --blue: var(--ctp-mocha-blue);
+    --red: var(--ctp-mocha-red);
+
+    --overlay0: var(--ctp-mocha-overlay0);
+    --overlay2: var(--ctp-mocha-overlay2);
+
+    --surface0: var(--ctp-mocha-surface0);
+    --surface2: var(--ctp-mocha-surface2);
+
+    --T: var(--ctp-mocha-mauve);
+    --I: var(--ctp-mocha-sky);
+    --J: var(--ctp-mocha-blue);
+    --L: var(--ctp-mocha-peach);
+    --O: var(--ctp-mocha-yellow);
+    --S: var(--ctp-mocha-green);
+    --Z: var(--ctp-mocha-red);
+    --G: var(--ctp-mocha-text);
 }
 
 * {
