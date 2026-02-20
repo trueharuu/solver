@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="credits">pc solver | <a href="https://github.com/wirelyre" target="_blank">wirelyre</a> | <a
+                href="https://github.com/trueharuu" target="_blank">trueharuu</a></div>
+
+        <div id="settings-container">
+            <div id="save-picker-container">
+                <table id="save-picker">
+                    <tr>
+                        <td><button type="button" id="save-picker-header">Save</button></td>
+                        <td><button type="button" id="save-picker-T" class="save">T</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="button" id="save-picker-I" class="save">I</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="button" id="save-picker-J" class="save">J</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="button" id="save-picker-L" class="save">L</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="button" id="save-picker-O" class="save">O</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="button" id="save-picker-S" class="save">S</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="button" id="save-picker-Z" class="save">Z</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="board"></div>
+            <div>
+                <table id="pc-picker">
+                    <tr>
+                        <td><button type="button" id="pc-picker-1" class="pc">1st</button></td>
+                        <td><button type="button" id="pc-picker-header">PC</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" id="pc-picker-2" class="pc">2nd</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" id="pc-picker-3" class="pc">3rd</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" id="pc-picker-4" class="pc">4th</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" id="pc-picker-5" class="pc">5th</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" id="pc-picker-6" class="pc">6th</button></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" id="pc-picker-7" class="pc">7th</button></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="functions">
+        <button id="fn_clear" type="button" onclick="reset()">Clear (R)</button>
+        <button id="fn_mirror" type="button" onclick="mirror()">Mirror (M)</button>
+        <button id="fn_submit" type="button" onclick="submit()">Submit (Enter)</button>
+    </div>
+    </div>
+
+</body>
+
+</html>
