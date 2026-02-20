@@ -12,15 +12,25 @@
 
     --blue: light-dark(var(--ctp-latte-red), var(--ctp-mocha-blue));
     --red: light-dark(var(--ctp-latte-blue), var(--ctp-mocha-red));
-    
+
 
     --overlay0: light-dark(var(--ctp-latte-overlay2), var(--ctp-mocha-overlay0));
     --overlay2: light-dark(var(--ctp-latte-overlay0), var(--ctp-mocha-overlay2));
-    
+
     --surface0: light-dark(var(--ctp-latte-surface0), var(--ctp-mocha-surface0));
     --surface2: light-dark(var(--ctp-latte-surface2), var(--ctp-mocha-surface2));
-    
+
+    --T: light-dark(var(--ctp-frappe-mauve), var(--ctp-mocha-mauve));
+    --I: light-dark(var(--ctp-frappe-sky), var(--ctp-mocha-sky));
+    --J: light-dark(var(--ctp-frappe-blue), var(--ctp-mocha-blue));
+    --L: light-dark(var(--ctp-frappe-peach), var(--ctp-mocha-peach));
+    --O: light-dark(var(--ctp-frappe-yellow), var(--ctp-mocha-yellow));
+    --S: light-dark(var(--ctp-frappe-green), var(--ctp-mocha-green));
+    --Z: light-dark(var(--ctp-frappe-red), var(--ctp-mocha-red));
+    --G: light-dark(var(--ctp-frappe-text), var(--ctp-mocha-text));
+
 }
+
 * {
     font-family: 'Unifont', monospace;
     font-size: 12pt;
@@ -42,7 +52,7 @@ a {
 
 #credits {
     text-align: center;
-    margin-top: 0.5em;
+    margin-top: 1em;
     color: var(--overlay0);
 }
 
@@ -52,7 +62,7 @@ a {
 
 #settings-container {
     display: grid;
-    grid-template-columns: 37% 26% 37%;
+    grid-template-columns: 37% 26% 10% 27%;
 }
 
 #functions {
@@ -142,17 +152,20 @@ li {
 }
 
 .save.off,
-.pc.off {
+.pc.off,
+.physics.off {
     color: var(--overlay2);
 }
 
 .save.on,
-.pc.on {
+.pc.on,
+.physics.on {
     color: var(--red);
 }
 
 .save.disabled,
-.pc.disabled {
+.pc.disabled,
+.physics.disabled {
     color: var(--surface0);
 }
 
@@ -161,6 +174,126 @@ button:hover {
     text-decoration: underline dotted !important;
 }
 
-a:active, button:active {
+a:active,
+button:active {
     color: var(--text) !important;
+}
+
+.cT {
+    background-color: var(--T);
+}
+
+.cI {
+    background-color: var(--I);
+}
+
+.cJ {
+    background-color: var(--J);
+}
+
+.cL {
+    background-color: var(--L);
+}
+
+.cO {
+    background-color: var(--O);
+}
+
+.cS {
+    background-color: var(--S);
+}
+
+.cZ {
+    background-color: var(--Z);
+}
+
+.cG {
+    background-color: var(--G);
+}
+
+.s {
+    outline: 1px solid;
+}
+
+.sT {
+    outline-color: var(--T);
+}
+
+.sI {
+    outline-color: var(--I);
+}
+
+.sJ {
+    outline-color: var(--J);
+}
+
+.sL {
+    outline-color: var(--L);
+}
+
+.sO {
+    outline-color: var(--O);
+}
+
+.sS {
+    outline-color: var(--S);
+}
+
+.sZ {
+    outline-color: var(--Z);
+}
+
+.sG {
+    outline-color: var(--G);
+}
+
+.sol-cell {
+    width: 1.5em;
+    height: 1.5em;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.sol-table {
+    display: grid;
+    font-size: 0;
+    outline: 0;
+    border-collapse: collapse;
+    margin: 5px;
+}
+
+.solution {
+    display: inline-block;
+    margin: 0.5em;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.sol-row {
+    border: 0;
+}
+
+.save-c {
+    color: var(--base);
+}
+
+.hidden {
+    display: none;
+}
+
+#physics-hold.on {
+    color: var(--red);
+}
+
+#physics-hold.on::before {
+    content: "+ ";
+}
+
+#physics-hold.off {
+    color: var(--surface2);
+}
+
+#physics-hold.off::before {
+    content: "- ";
 }
