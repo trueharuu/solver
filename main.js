@@ -2,9 +2,11 @@ async function main() {
   // initialize theme based on system preference or saved setting
   const initTheme = () => {
     const savedTheme = localStorage.getItem("theme");
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const systemPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
     const theme = savedTheme || (systemPrefersDark ? "dark" : "light");
-    
+
     document.documentElement.setAttribute("data-theme", theme);
     updateThemeButton(theme);
   };
@@ -17,7 +19,8 @@ async function main() {
   };
 
   const toggleTheme = () => {
-    const current = document.documentElement.getAttribute("data-theme") || "light";
+    const current =
+      document.documentElement.getAttribute("data-theme") || "light";
     const newTheme = current === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
@@ -305,7 +308,6 @@ function reset() {
 
   const output = document.getElementById("output");
   output.innerHTML = "";
-  
 }
 
 function mirror() {
@@ -479,13 +481,14 @@ function sol(s) {
   const el = document.createElement("table");
   el.classList.add("solution");
   const save = get_save_of(s);
+  console.log(save);
   const piece = saved_piece(s);
   if (save) {
     const save_header = document.createElement("tr");
     const save_el = document.createElement("td");
     save_el.textContent = `${save}`;
-    save_el.classList.add(`c${piece}`, "save-c");
-    el.classList.add(`s${piece}`, "s");
+    save_el.classList.add(`c${piece || 'G'}`, "save-c");
+    el.classList.add(`s${piece || 'G'}`, "s");
     save_header.appendChild(save_el);
     el.appendChild(save_header);
   }
@@ -493,8 +496,13 @@ function sol(s) {
   const active_saves = [...document.querySelectorAll(".save.on")].map(
     (el) => el.id.split("-")[2],
   );
-  console.log("Active saves:", active_saves, piece);
-  if (save && active_saves.length > 0 && !active_saves.includes(piece)) {
+  // console.log("Active saves:", active_saves, piece);
+  if (
+    save &&
+    active_saves.length > 0 &&
+    piece &&
+    !active_saves.includes(piece)
+  ) {
     el.classList.add("hidden");
   }
 

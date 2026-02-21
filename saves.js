@@ -7,9 +7,10 @@ function get_save_of(sol) {
     return queue.split(piece).length - 1;
   });
 
-  if (document.querySelectorAll(".pc.on").length === 0) {
+  if (document.querySelectorAll(".pc.on").length === 0 && saved_piece(sol) !== undefined) {
     return "Save " + saved_piece(sol);
   }
+
   const pc_num = Number(
     document.querySelectorAll(".pc.on")[0].id.split("-")[2],
   );
@@ -183,35 +184,17 @@ function saved_piece(sol) {
     return (sol.split(piece).length - 1) / 4;
   });
 
+  const used = queue_pieces.map((count, index) => count - sol_pieces[index]);
   let different_index = -1;
-  for (let i = 0; i < queue_pieces.length; i++) {
-    if (queue_pieces[i] !== sol_pieces[i]) {
+  for (let i = 0; i < used.length; i++) {
+    if (used[i] !== 0) {
       different_index = i;
     }
   }
 
-  let save;
-  const bag = new Set(["T", "I", "J", "L", "O", "S", "Z"]);
-  const current_pc_num = 1;
-  if (different_index !== -1) {
-    for (let j = 1; j < pieces_used[current_pc_num] + 2; j++) {
-      bag.delete(queue[queue.length - j]);
-    }
-
-    save = Array.from(bag).join("");
-
-    save += pieces[different_index];
-
-    save = sort(save);
-  } else {
-    for (let j = 1; j < pieces_used[current_pc_num] + 1; j++) {
-      bag.delete(queue[queue.length - j]);
-    }
-
-    save = Array.from(bag).join("");
-  }
-
-  return save;
+  return pieces[different_index];
+  // console.log(used);
+  // return 'T';
 }
 
 function sort(t) {
